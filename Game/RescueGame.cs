@@ -49,11 +49,49 @@ namespace TestMonoGame
             worldManager.Camera.TrackingBody = player.Body;
             controller = new Controller(player);
 
-            var wall = new Wall(worldManager, new Vector2(200, 10));
-            wall.Position = new Vector2(0, 10);
+            var wall = new Wall(worldManager, new Vector2(100 * 2, 20 * 2));
+            wall.Position = new Vector2(50 * 2, -10 * 2);
 
-            wall = new Wall(worldManager, new Vector2(10, 200));
-            wall.Position = new Vector2(-0, -80);
+            wall = new Wall(worldManager, new Vector2(20 * 2, 140 * 2));
+            wall.Position = new Vector2(-10 * 2, 50 * 2);
+
+            wall = new Wall(worldManager, new Vector2(140 * 2, 20 * 2));
+            wall.Position = new Vector2(50 * 2, 46 * 2);
+
+            wall = new Wall(worldManager, new Vector2(20 * 2, 100 * 2));
+            wall.Position = new Vector2(72 * 2, 50 * 2);
+
+            wall = new Wall(worldManager, new Vector2(6 * 2, 8 * 2));
+            wall.Position = new Vector2(3 * 2, 12 * 2);
+
+            wall = new Wall(worldManager, new Vector2(6 * 2, 8 * 2));
+            wall.Position = new Vector2(3 * 2, 24 * 2);
+
+            wall = new Wall(worldManager, new Vector2(16 * 2, 8 * 2));
+            wall.Position = new Vector2(18 * 2, 12 * 2);
+
+            wall = new Wall(worldManager, new Vector2(16 * 2, 8 * 2));
+            wall.Position = new Vector2(18 * 2, 24 * 2);
+
+            wall = new Wall(worldManager, new Vector2(16 * 2, 8 * 2));
+            wall.Position = new Vector2(38 * 2, 12 * 2);
+
+            wall = new Wall(worldManager, new Vector2(16 * 2, 8 * 2));
+            wall.Position = new Vector2(38 * 2, 24 * 2);
+
+            wall = new Wall(worldManager, new Vector2(4 * 2, 8 * 2));
+            wall.Position = new Vector2(18 * 2, 4 * 2);
+
+            wall = new Wall(worldManager, new Vector2(4 * 2, 8 * 2));
+            wall.Position = new Vector2(18 * 2, 32 * 2);
+
+            wall = new Wall(worldManager, new Vector2(26 * 2, 8 * 2));
+            wall.Position = new Vector2(49 * 2, 4 * 2);
+
+            wall = new Wall(worldManager, new Vector2(26 * 2, 8 * 2));
+            wall.Position = new Vector2(49 * 2, 32 * 2);
+
+           
 
             var enemygradea = new EnemyGradeA(worldManager);
             enemygradea.Position = new Vector2(10, 0);
