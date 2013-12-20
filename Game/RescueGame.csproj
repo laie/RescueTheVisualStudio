@@ -36,9 +36,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Camera2D.cs" />
+    <Compile Include="Controller.cs" />
+    <Compile Include="EnemyGradeA.cs" />
+    <Compile Include="EnemyGradeReport.cs" />
+    <Compile Include="GameObject.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="RescueGame.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Wall.cs" />
+    <Compile Include="WorldManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="OpenTK">
@@ -61,14 +68,15 @@
       <Link>SDL.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\painted.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Icon.ico" />
     <Content Include="openal32.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Content\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\FarseerPhysics_3_5\Farseer Physics DebugView 3.5\DebugView MonoGame.csproj">
       <Project>{566f1803-90b5-4947-8730-57f092fbb002}</Project>
