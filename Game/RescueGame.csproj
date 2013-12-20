@@ -76,6 +76,12 @@
     <Content Include="Content\painted.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\panel.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\player.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\report1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
