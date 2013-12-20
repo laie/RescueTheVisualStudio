@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace RescueGame
 {
-    class EnemyGradeReport : Actor
+    public class EnemyGradeReport : Actor
     {
         public EnemyGradeReport(WorldManager WorldManager): base (WorldManager)
         {

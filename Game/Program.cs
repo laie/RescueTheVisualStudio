@@ -38,15 +38,22 @@ namespace RescueGame
                     using (var game = new RescueGame())
                     {
                         game.Run();
-                    }
-                    System.Console.WriteLine(@"당신은 학점을(를) 잃었습니다.
+                        if (game.enemyreport.IsDestroyed)
+                        {
+                            System.Console.WriteLine(@"당신은 학점을(를) 잃었습니다.
 당신은 애인을(를) 잃었습니다. 아니 원래 없었나요?
 학사경고증이(가) 당신의 부모님께 배송되었습니다.
 비주얼스튜디오를 되찾았습니다!! 하지만... 이게 최선일까요?
 당신은 아직 Ctrl-C를 눌러 이 작업을 취소할 수 있습니다.");
-                    Console.ReadLine();
-                    Process.Start(filename);
-                    return;
+                            Console.ReadLine();
+                            Process.Start(filename);
+                            return;
+                        }
+                        else
+                        {
+                            System.Console.WriteLine("훌륭한 선택입니다! 오늘 하루정돈 산책이라도 하며 자신을 돌아보는 시간을 가져봐요!");
+                        }
+                    }
                 }
                 System.Threading.Thread.Sleep(10);
 

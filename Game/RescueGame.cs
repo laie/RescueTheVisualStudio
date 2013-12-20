@@ -26,6 +26,8 @@ namespace RescueGame
         FireZone firezone;
         Wall lastwall;
 
+        public EnemyGradeReport enemyreport { get; private set; }
+
         public EnemyGradeA[] enemygradeas = new EnemyGradeA[4];
 
         double panelCloseTick = 5;
@@ -134,7 +136,7 @@ namespace RescueGame
             enemygradeas[3] = new EnemyGradeA(worldManager);
             enemygradeas[3].Position = new Vector2(45, 60);
 
-            var enemyreport = new EnemyGradeReport(worldManager);
+            enemyreport = new EnemyGradeReport(worldManager);
             enemyreport.Position = new Vector2(120, 37);
           
         }
