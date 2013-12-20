@@ -13,7 +13,7 @@ using FarseerPhysics.DebugView;
 using FarseerPhysics.Factories;
 #endregion
 
-namespace TestMonoGame
+namespace RescueGame
 {
     public class RescueGame : Game
     {
@@ -28,12 +28,14 @@ namespace TestMonoGame
 
         public EnemyGradeA[] enemygradeas = new EnemyGradeA[4];
 
-        Texture2D texture;
+        double panelCloseTick = 5;
 
         public RescueGame()
             : base()
         {
             graphics = new GraphicsDeviceManager(this);
+            graphics.PreferredBackBufferWidth = 1024;
+            graphics.PreferredBackBufferHeight = 768;
             Content.RootDirectory = "Content";
         }
 
@@ -43,8 +45,6 @@ namespace TestMonoGame
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            texture = Texture2D.FromStream(GraphicsDevice, new FileStream(@"Content\painted.png", FileMode.Open));
 
             worldManager.Load(GraphicsDevice, Content);
 
@@ -159,20 +159,26 @@ namespace TestMonoGame
             worldManager.Update(gameTime);
 
             base.Update(gameTime);
+
+            panelCloseTick -= gameTime.ElapsedGameTime.TotalSeconds;
         }
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(new Color(new Vector3(0.1f, 0.1f, 0.1f)));
 
-            spriteBatch.Begin();
-            spriteBatch.Draw(texture, new Vector2(10, 10), Color.White);
-            spriteBatch.End();
             // TODO: Add your drawing code here
-
             worldManager.Draw(gameTime);
 
             base.Draw(gameTime);
+
+            float alpha = (float)panelCloseTick/5;
+            Color color = new Color(Color.White, alpha);
+
+            var texture = worldManager.Textures["panel.png"];
+            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.NonPremultiplied);
+            spriteBatch.Draw(texture, new Vector2(graphics.PreferredBackBufferWidth / 2, graphics.PreferredBackBufferHeight / 2), null, color, 0, new Vector2(texture.Width/2, texture.Height/2), 1, SpriteEffects.None, 0);
+            spriteBatch.End();
         }
     }
 }
