@@ -5,8 +5,10 @@ using System.Text;
 using FarseerPhysics.Dynamics;
 using FarseerPhysics.Dynamics.Contacts;
 using FarseerPhysics.Factories;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
-namespace TestMonoGame
+namespace RescueGame
 {
     public class Player : Actor
     {
@@ -33,8 +35,15 @@ namespace TestMonoGame
 
         public override void Update(Microsoft.Xna.Framework.GameTime gameTime)
         {
-            
             base.Update(gameTime);
+            Body.Rotation = (float)Math.Atan2(Body.LinearVelocity.Y, Body.LinearVelocity.X);
+        }
+
+        public override void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch SpriteBatch)
+        {
+            base.Draw(SpriteBatch);
+            var texture = worldManager.Textures["player.png"];
+            SpriteBatch.Draw(texture, worldManager.Camera.ConvertWorldToScreen(Position), null, Color.White, (float)(Rotation+Math.PI/2), new Vector2(texture.Width / 2, texture.Height / 2), 0.1f, SpriteEffects.None, 0);
         }
     }
 }

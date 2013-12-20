@@ -5,16 +5,17 @@ using System.Text;
 using FarseerPhysics.Dynamics;
 using FarseerPhysics.Dynamics.Contacts;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace TestMonoGame
+namespace RescueGame
 {
     /// <summary>
     /// 파티클, 플레이어, 적, 벽 등을 포함한 게임 오브젝트
     /// </summary>
     public abstract class GameObject
     {
-        WorldManager worldManager;
+        protected WorldManager worldManager;
         LinkedListNode<GameObject> selfNode;
 
         public bool IsDestroyed { get; private set; }
@@ -38,7 +39,7 @@ namespace TestMonoGame
         {
         }
 
-        public virtual void Draw()
+        public virtual void Draw(SpriteBatch SpriteBatch)
         {
         }
     }
@@ -108,8 +109,6 @@ namespace TestMonoGame
                 IsDashing = false;
             }
             Body.LinearVelocity *= (float)(Math.Pow(0.9f, velocity_decay_factor * gameTime.ElapsedGameTime.TotalMilliseconds));
-
-            Body.Rotation = (float)Math.Atan2(Body.LinearVelocity.Y, Body.LinearVelocity.X);
         }
 
     }
