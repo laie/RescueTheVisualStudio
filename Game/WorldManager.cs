@@ -11,6 +11,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace TestMonoGame
 {
+    /// <summary>
+    /// 물리엔진 관리해줌
+    /// </summary>
     public class WorldManager
     {
         public World World { get; private set; }

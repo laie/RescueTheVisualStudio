@@ -15,9 +15,6 @@ using FarseerPhysics.Factories;
 
 namespace TestMonoGame
 {
-    /// <summary>
-    /// This is the main type for your game
-    /// </summary>
     public class RescueGame : Game
     {
         GraphicsDeviceManager graphics;
@@ -26,6 +23,7 @@ namespace TestMonoGame
         WorldManager worldManager = new WorldManager();
         Player player;
         Controller controller;
+        FireZone firezone;
 
         Texture2D texture;
 
@@ -62,6 +60,9 @@ namespace TestMonoGame
 
             var enemyreport = new EnemyGradeReport(worldManager);
             enemyreport.Position = new Vector2(30, 0);
+
+            firezone = new FireZone(worldManager);
+            firezone.Position = new Vector2(40, -20);
         }
 
         protected override void UnloadContent()
