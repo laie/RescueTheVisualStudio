@@ -24,6 +24,9 @@ namespace TestMonoGame
         Player player;
         Controller controller;
         FireZone firezone;
+        Wall lastwall;
+
+        public EnemyGradeA[] enemygradeas = new EnemyGradeA[4];
 
         Texture2D texture;
 
@@ -92,6 +95,9 @@ namespace TestMonoGame
             wall = new Wall(worldManager, new Vector2(26 * 2, 8 * 2));
             wall.Position = new Vector2(49 * 2, 32 * 2);
 
+            lastwall = new Wall(worldManager, new Vector2(4 * 2, 4 * 2));
+            lastwall.Position = new Vector2(88, 36);
+
             firezone = new FireZone(worldManager);
             firezone.Position = new Vector2(2, 2);
 
@@ -116,17 +122,17 @@ namespace TestMonoGame
             firezone = new FireZone(worldManager);
             firezone.Position = new Vector2(70, 60);
 
-            var enemygradea = new EnemyGradeA(worldManager);
-            enemygradea.Position = new Vector2(30, 0);
+            enemygradeas[0] = new EnemyGradeA(worldManager);
+            enemygradeas[0].Position = new Vector2(30, 0);
 
-            enemygradea = new EnemyGradeA(worldManager);
-            enemygradea.Position = new Vector2(10, 60);
+            enemygradeas[1] = new EnemyGradeA(worldManager);
+            enemygradeas[1].Position = new Vector2(10, 60);
 
-            enemygradea = new EnemyGradeA(worldManager);
-            enemygradea.Position = new Vector2(56, 8);
+            enemygradeas[2] = new EnemyGradeA(worldManager);
+            enemygradeas[2].Position = new Vector2(56, 8);
 
-            enemygradea = new EnemyGradeA(worldManager);
-            enemygradea.Position = new Vector2(45, 60);
+            enemygradeas[3] = new EnemyGradeA(worldManager);
+            enemygradeas[3].Position = new Vector2(45, 60);
 
             var enemyreport = new EnemyGradeReport(worldManager);
             enemyreport.Position = new Vector2(120, 37);
@@ -139,8 +145,15 @@ namespace TestMonoGame
 
         protected override void Update(GameTime gameTime)
         {
+            float count = 0;
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+
+            for (int i = 0; i < 4; i++)
+                if (enemygradeas[i].IsDestroyed == false) count++;
+
+            if (count == 0 )
+                lastwall.Position = new Vector2(300, 36);
 
             controller.Update(gameTime);
             worldManager.Update(gameTime);
