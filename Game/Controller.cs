@@ -16,10 +16,12 @@ namespace TestMonoGame
 
         public void Update(GameTime gameTime)
         {
-            if (Keyboard.GetState().IsKeyDown(Keys.Left)) Actor.Velocity += new Vector2(-2f, 0);
-            if (Keyboard.GetState().IsKeyDown(Keys.Right)) Actor.Velocity += new Vector2(+2f, 0);
-            if (Keyboard.GetState().IsKeyDown(Keys.Up)) Actor.Velocity += new Vector2(0, -2f);
-            if (Keyboard.GetState().IsKeyDown(Keys.Down)) Actor.Velocity += new Vector2(0, +2f);
+            if (Keyboard.GetState().IsKeyDown(Keys.Left)) Actor.Velocity += new Vector2(-1.5f, 0);
+            if (Keyboard.GetState().IsKeyDown(Keys.Right)) Actor.Velocity += new Vector2(+1.5f, 0);
+            if (Keyboard.GetState().IsKeyDown(Keys.Up)) Actor.Velocity += new Vector2(0, -1.5f);
+            if (Keyboard.GetState().IsKeyDown(Keys.Down)) Actor.Velocity += new Vector2(0, +1.5f);
+
+            if (Keyboard.GetState().IsKeyDown(Keys.LeftShift)) Actor.IsDashing = true;
         }
     }
 }

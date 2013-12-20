@@ -39,6 +39,7 @@
     <Compile Include="Controller.cs" />
     <Compile Include="EnemyGradeA.cs" />
     <Compile Include="EnemyGradeReport.cs" />
+    <Compile Include="FireZone.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="RescueGame.cs" />
@@ -50,6 +51,10 @@
   <ItemGroup>
     <Reference Include="Lidgren.Network">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\MonoGame\v3.0\Assemblies\Lidgren.Network.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoGame.Framework, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MonoGame\v3.0\Assemblies\WindowsGL\MonoGame.Framework.dll</HintPath>
     </Reference>
     <Reference Include="MonoGame.Framework.Windows">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\MonoGame\v3.0\Assemblies\MonoGame.Framework.Windows.dll</HintPath>
