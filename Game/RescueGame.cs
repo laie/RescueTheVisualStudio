@@ -47,6 +47,7 @@ namespace TestMonoGame
 
             player = new Player(worldManager);
             worldManager.Camera.TrackingBody = player.Body;
+            player.Position = new Vector2(2, 18 * 2);
             controller = new Controller(player);
 
             var wall = new Wall(worldManager, new Vector2(100 * 2, 20 * 2));
@@ -91,16 +92,45 @@ namespace TestMonoGame
             wall = new Wall(worldManager, new Vector2(26 * 2, 8 * 2));
             wall.Position = new Vector2(49 * 2, 32 * 2);
 
-           
-
-            var enemygradea = new EnemyGradeA(worldManager);
-            enemygradea.Position = new Vector2(10, 0);
-
-            var enemyreport = new EnemyGradeReport(worldManager);
-            enemyreport.Position = new Vector2(30, 0);
+            firezone = new FireZone(worldManager);
+            firezone.Position = new Vector2(2, 2);
 
             firezone = new FireZone(worldManager);
-            firezone.Position = new Vector2(40, -20);
+            firezone.Position = new Vector2(30, 14);
+
+            firezone = new FireZone(worldManager);
+            firezone.Position = new Vector2(2, 70);
+
+            firezone = new FireZone(worldManager);
+            firezone.Position = new Vector2(30, 60);
+
+            firezone = new FireZone(worldManager);
+            firezone.Position = new Vector2(42, 8);
+
+            firezone = new FireZone(worldManager);
+            firezone.Position = new Vector2(70, 8);
+
+            firezone = new FireZone(worldManager);
+            firezone.Position = new Vector2(55, 70);
+
+            firezone = new FireZone(worldManager);
+            firezone.Position = new Vector2(70, 60);
+
+            var enemygradea = new EnemyGradeA(worldManager);
+            enemygradea.Position = new Vector2(30, 0);
+
+            enemygradea = new EnemyGradeA(worldManager);
+            enemygradea.Position = new Vector2(10, 60);
+
+            enemygradea = new EnemyGradeA(worldManager);
+            enemygradea.Position = new Vector2(56, 8);
+
+            enemygradea = new EnemyGradeA(worldManager);
+            enemygradea.Position = new Vector2(45, 60);
+
+            var enemyreport = new EnemyGradeReport(worldManager);
+            enemyreport.Position = new Vector2(120, 37);
+          
         }
 
         protected override void UnloadContent()
