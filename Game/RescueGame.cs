@@ -61,7 +61,7 @@ namespace TestMonoGame
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             // TODO: use this.Content to load your game content here
-            texture = Texture2D.FromStream(GraphicsDevice, new FileStream(@"C:\Users\Seiris\Desktop\painted.png", FileMode.Open));
+            //texture = Texture2D.FromStream(GraphicsDevice, new FileStream(@"C:\Users\Seiris\Desktop\painted.png", FileMode.Open));
             world = new World(new Vector2(0, 1));
             debugWorldView = new DebugViewXNA(world);
             debugWorldView.LoadContent(GraphicsDevice, Content);
@@ -104,7 +104,7 @@ namespace TestMonoGame
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin();
-            spriteBatch.Draw(texture, new Vector2(10, 10), Color.White);
+            //spriteBatch.Draw(texture, new Vector2(10, 10), Color.White);
             spriteBatch.End();
             // TODO: Add your drawing code here
             debugWorldView.RenderDebugData(ref camera.SimProjection, ref camera.SimView);
