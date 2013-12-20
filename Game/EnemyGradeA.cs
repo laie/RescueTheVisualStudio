@@ -29,6 +29,7 @@ namespace TestMonoGame
             {
                 health -= 50;
                 if (health <= 0) Destroy();
+               
             }
 
             return true;
